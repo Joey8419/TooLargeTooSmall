@@ -1,36 +1,35 @@
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
+
 /**
  * Created by iyasuwatts on 10/17/17.
  */
 public class Main {
 
     public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        Random rand = new Random();
+
+        int randomNumber = rand.nextInt(50) +1;
         Scanner scanner = new Scanner(System.in);
 
-        Random random = new Random();
+        while (true) {
+            System.out.println("Enter a number between 1 and 50");
+            int userGuess = scanner.nextInt();
 
-        // Generate the numbers;
-        int randomNumber = 1 + (int) (50 * Math.random());
+            if (userGuess == randomNumber) {
+                System.out.println("Congratulations you  guessed the right number!");
+                break;
+            }
+            else if (randomNumber > userGuess) {
+                System.out.println("Incorrect number. Try a larger number");
+            }
+            else {
+                System.out.println("Try a smaller number");
+            }
 
-        // Number of guesses
-        int numberOfGuesses = 5;
-        int k = 0;
-
-        System.out.println("Enter number of guesses (1-50)");
-
-        int userGuess = scanner.nextInt();
-
-        if (userGuess == randomNumber) {
-            System.out.println("Correct Guess");
-
-        } else if (randomNumber > userGuess) {
-            System.out.println("Too Large!");
-
-        } else if (randomNumber < userGuess) {
-            System.out.println("Too Small");
         }
-        else
-            System.out.println("You have exceeded your number of tries");
-    }
-    }
+        }
+
+        }
