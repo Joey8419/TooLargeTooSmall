@@ -10,7 +10,7 @@ public class Main {
 
         Random random = new Random();
 
-        // Generate the numbers
+        // Generate the numbers;
         int randomNumber = 1 + (int) (50 * Math.random());
 
         // Number of guesses
@@ -23,12 +23,14 @@ public class Main {
 
         if (userGuess == randomNumber) {
             System.out.println("Correct Guess");
+
         } else if (randomNumber > userGuess) {
             System.out.println("Too Large!");
-        }
-    } else
 
-    {
-        System.out.println("Too Small!");
+        } else if (randomNumber < userGuess) {
+            System.out.println("Too Small");
+        }
+        else
+            System.out.println("You have exceeded your number of tries");
     }
-}
+    }
